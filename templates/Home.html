@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Arial</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Arial</span>
+        </div>
+      </nav>
+    {% block content %}
+    {{session.get('User')}}
+    <div class="container-fluid">
+        <div class="row" style="padding:5%;  background-color: rgb(226, 245, 239);">
+        <h1>Arial</h1>
+        <p> A Web based application that allow for the creation of static forms, configured based on the user by an admin, are incredibly useful tools in the modern digital landscape. This applications provide a streamlined and efficient way for organizations to gather data and information from their users or clients, without the need for complex, dynamic form creation. At the core, the admin is able to set up standardized form templates that capture the necessary data points, which can then be easily deployed and accessed by end-users.
+        </p>
+        <button type="button" class="btn btn-light">
+            <a href="{{url_for('reg_admin')}}" style="color: black; text-decoration: none;">
+                <h6>Click here to Join and create your group</h6>
+            </a>
+        </button>
+        <button type="button" class="btn btn-light">
+            <a href="{{url_for('admin_login')}}" style="color: black; text-decoration: none;">
+                <h6>Admin Login</h6>
+            </a>
+        </button>
+    </div>
+    </div>
+    {%endblock%}
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

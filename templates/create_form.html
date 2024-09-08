@@ -1,0 +1,64 @@
+{% extends 'admin_panel.html'%}
+
+{%block activepage%}
+<a class="nav-link active" aria-current="page" href="#">Create Form</a>
+<a class="nav-link" href="#">Add user to group</a>
+{%endblock activepage%}
+{%block content%}
+<script src=".static/script.js" text="type/javascript"></script>
+<div class="container">
+    <div class="card">
+        <div class="card-body d-flex justify-content-center align-items-center">
+            <form id="form" name="createForm">
+                <div class="row">
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <label>Enter form name:
+                            <input id="formname" type="text" name="formname"></label>
+                    </div>
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <label>Form Description:
+                            <textarea id="description" name="formdescription" cols="20" rows="2"></textarea></label>
+                    </div>
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <button class="btn btn-dark" type="submit">Create form</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+    <div class="card col p-3 m-5" style="width: 18rem;">
+        <div class="card-body d-flex align-items-center justify-content-center">
+            <form id="myQuestion" class="question_list">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <label>Enter question:
+                        <input id="question" type="text" name="question"></label>
+                </div>
+                <div class="row d-flex align-items-center justify-content-center">
+                    <label>Input type:</label>
+                    <select name="inputType" id="inputType">
+                        <option value="">Please choose value</option>
+                        <option value="dropdown">Dropdown</option>
+                        <option value="Radiobutton">Radio Button</option>
+                        <option value="Text">Text</option>
+                        <option value="Textarea">Text Area</option>
+                    </select>
+                </div>
+                <div class="row d-flex align-items-center justify-content-center">
+                    <label>input List:</label>
+                        <textarea id="List" name="formdescription" cols="30" rows="2"></textarea>
+                </div>
+                <div class="col d-flex align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="submit">Add question</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="card col"></div>
+
+</div>
+</div>
+
+<script src="/static/script.js" text="type/javascript"></script>
+{%endblock%}
