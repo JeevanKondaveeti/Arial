@@ -77,4 +77,4 @@ def receive_data():
     return jsonify(grp_info)
 
 
-app.run(debug=True,host='localhost',port=1234)
+app.run(debug=True,host='localhost',port=1601)

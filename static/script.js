@@ -1,5 +1,5 @@
 
-var form = document.getElementById("form");
+var form_ = document.getElementById("form");
 var formName = document.getElementById("formname");
 var description = document.getElementById("description");
 var myQuestion =document.getElementById("myQuestion");
