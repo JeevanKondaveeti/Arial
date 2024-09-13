@@ -1,0 +1,50 @@
+input {
+    
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+textarea {
+    
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+}
+select {
+    background-color: lightgray;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+}
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+input[type="submit"] {
+    background-color: purple;
+    width: 180px;
+    display: block;
+    margin: 0px auto;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: indigo;
+}
+button{
+    margin-top: 1%;
+}
