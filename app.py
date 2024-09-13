@@ -70,7 +70,7 @@ def admin_panel():
         if request.method == 'POST':
             form = request.get_json()
             print(form)
-            return jsonify("message")
+            return jsonify("Love you")
     return render_template('create_form.html')
 @app.route('/3', methods=['POST','GET'])
 def receive_data():
