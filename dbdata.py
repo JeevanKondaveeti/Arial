@@ -106,6 +106,25 @@ def admin_Login(username,passkey):
         else:
             return 0
         
-        
+   
+def screen(screendata):
+    with open('dbfile.json') as f:
+        data=json.load(f)
+    user = data['user']
+    password = data['password']
+    db = data['db']
+    host = data['host']
+    mydb = mysql.connector.connect(user=user,password = password,db=db,host=host)
+    if mydb.is_connected:
+        cursor = mydb.cursor(buffered=True)   
+        cursor.execute('select * from screens') 
+        screensinfo = cursor.fetchall()
+        print(screensinfo)
+        for screeninfo in screensinfo:
+            if screeninfo[1] == screendata['form']:
+                return "1"
+            else:
+                return "ok"
+                
         
     

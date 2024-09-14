@@ -2,6 +2,7 @@ from flask import Flask,render_template,redirect,request,url_for,flash,session,j
 from flask_session import Session
 import os
 from dbdata import util,util_creation,data_save,admin_Login
+from filegenerator import filegenerator
 dbcreation = util_creation()
 dbinfo = util()
 ##print(dbinfo)
@@ -76,7 +77,8 @@ def admin_panel():
 def receive_data():
     if request.method == "POST":
         data = dict(request.form)
-        print(data)
+        #print(data)
+        filegenerator(data)
 # Process the received data
         return jsonify("ok")
     return jsonify(grp_info)
