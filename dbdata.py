@@ -107,7 +107,7 @@ def admin_Login(username,passkey):
             return 0
         
    
-def screen(screendata):
+def screen(screen,filepath):
     with open('dbfile.json') as f:
         data=json.load(f)
     user = data['user']
@@ -119,12 +119,11 @@ def screen(screendata):
         cursor = mydb.cursor(buffered=True)   
         cursor.execute('select * from screens') 
         screensinfo = cursor.fetchall()
-        print(screensinfo)
-        for screeninfo in screensinfo:
-            if screeninfo[1] == screendata['form']:
-                return "1"
-            else:
-                return "ok"
-                
+        print(len(screensinfo))
+        if len(screensinfo) == 0:
+            cursor.execute('insert into screens (screen_name,screen_path) values (%s,%s)',[screen,filepath])
+            mydb.commit()
+
+        
         
     

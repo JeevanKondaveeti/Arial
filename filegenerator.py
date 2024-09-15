@@ -29,11 +29,13 @@ def filegenerator(data, path="files", filename=None, mode="w"):
 
     if not filename:
         filename = data['form']
+        print(filename)
 
     if not os.path.exists(path):
         os.mkdir(path)
 
     file_path = os.path.join(path, filename)
+    print(file_path)
 
     try:
         with open(file_path, mode) as f:
@@ -41,3 +43,11 @@ def filegenerator(data, path="files", filename=None, mode="w"):
         print("Data written to file:", file_path)
     except Exception as e:
         print("Error creating or writing to file:", e)
+    
+    return file_path
+
+
+def path_creation(path="files"):
+    if not os.path.exists(path):
+        os.mkdir(path)
+

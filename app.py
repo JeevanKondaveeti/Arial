@@ -1,8 +1,9 @@
 from flask import Flask,render_template,redirect,request,url_for,flash,session,jsonify
 from flask_session import Session
 import os
-from dbdata import util,util_creation,data_save,admin_Login
-from filegenerator import filegenerator
+from dbdata import util,util_creation,data_save,admin_Login,screen
+from filegenerator import filegenerator,path_creation
+path_creation = path_creation()
 dbcreation = util_creation()
 dbinfo = util()
 ##print(dbinfo)
@@ -71,15 +72,22 @@ def admin_panel():
         if request.method == 'POST':
             form = request.get_json()
             print(form)
+            screen_name = form['form']
+            print(screen_name)
+            filepath=filegenerator(form)
+            print(filepath)
+            response=screen(screen_name,filepath)
+            print(response)
+            if response != '1':
+                print("File not saved to database")
+            else:
+                print("File saved successfully to database")
             return jsonify("Love you")
     return render_template('create_form.html')
 @app.route('/3', methods=['POST','GET'])
 def receive_data():
     if request.method == "POST":
         data = dict(request.form)
-        #print(data)
-        filegenerator(data)
-# Process the received data
         return jsonify("ok")
     return jsonify(grp_info)
 
