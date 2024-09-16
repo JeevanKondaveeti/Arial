@@ -119,10 +119,21 @@ def screen(screen,filepath):
         cursor = mydb.cursor(buffered=True)   
         cursor.execute('select * from screens') 
         screensinfo = cursor.fetchall()
-        print(len(screensinfo))
+        print(screensinfo)
         if len(screensinfo) == 0:
             cursor.execute('insert into screens (screen_name,screen_path) values (%s,%s)',[screen,filepath])
             mydb.commit()
+            return "1"
+        else:
+            for screens in screensinfo:
+                if screens[1] == screen:
+                    return "0"
+                else:
+                    cursor.execute('insert into screens (screen_name,screen_path) values (%s,%s)',[screen,filepath])
+                    mydb.commit()
+                    return "1"
+
+        
 
         
         

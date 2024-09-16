@@ -6,68 +6,58 @@
 {%endblock activepage%}
 {%block content%}
 <link rel="stylesheet" href="{{ url_for('static',filename = 'style.css')}}">
-<div class="container">
-    <div class="card m-1">
-        <div class="card-body d-flex justify-content-center align-items-center">  
-            <form id="form" name="createForm">
-                <div class="row">
-                    <h5 class="col card-title d-flex align-items-center justify-content-center">Form Info</h5>
-                    <div class="col d-flex align-items-center justify-content-center">
-                        <label>Enter form name:
-                            <input id="formname" type="text" name="formname"></label>
+<div class="container p-1">
+    <div class="container-row d-flex justify-content-center align-items-center">
+        <form class="form-inline gap-3" id="form" name="createForm">
+            <h5>Form Info</h5>
+            <label>Enter form name:
+                <input id="formname" type="text" name="formname"></label>
+            <label>Form Description:
+                <textarea id="description" name="formdescription" cols="50" rows="1"></textarea></label>
+            <button class="btn btn-dark" type="submit">Create form</button>
+        </form>
+    </div>
+    <div class="container row">
+        <div class="card col p-1 m-1" style="width: 18rem;">
+            <div class="card-body d-flex align-items-center justify-content-center">
+                <form id="myQuestion" class="question_list">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <label>Enter question:
+                            <input id="question" type="text" name="question"></label>
                     </div>
-                    <div class="col d-flex align-items-center justify-content-center">
-                        <label>Form Description:
-                            <textarea id="description" name="formdescription" cols="80" rows="2"></textarea></label>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <label>Input type:</label>
+                        <select name="inputType" id="inputType">
+                            <option value="">Please choose value</option>
+                            <option value="dropdown">Dropdown</option>
+                            <option value="Radiobutton">Radio Button</option>
+                            <option value="Text">Text</option>
+                            <option value="Textarea">Text Area</option>
+                        </select>
                     </div>
-                    <div class="col d-flex align-items-center justify-content-center">
-                        <button class="btn btn-dark" type="submit">Create form</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-</div>
-<div class="container row">
-    <div class="card col p-3 m-5" style="width: 18rem;">
-        <div class="card-body d-flex align-items-center justify-content-center">
-            <form id="myQuestion" class="question_list">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <label>Enter question:
-                        <input id="question" type="text" name="question"></label>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <label>Input type:</label>
-                    <select name="inputType" id="inputType">
-                        <option value="">Please choose value</option>
-                        <option value="dropdown">Dropdown</option>
-                        <option value="Radiobutton">Radio Button</option>
-                        <option value="Text">Text</option>
-                        <option value="Textarea">Text Area</option>
-                    </select>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <label>option List:</label>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <label>option List:</label>
                         <textarea id="List" name="formdescription" cols="30" rows="2"></textarea>
-                </div>
-                <div class="col d-flex align-items-center justify-content-center m-3">
-                    <button class="btn btn-dark" type="submit">Add question</button>
-                </div>
+                    </div>
+                    <div class="col d-flex align-items-center justify-content-center m-3">
+                        <button class="btn btn-dark" type="submit">Add question</button>
+                    </div>
 
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="card col p-3 m-5" style="width: 18rem;">
-        <div  class="card-body">
-            <h5 class="card-title" id="form_title"></h5>
-            <form id="form_container" class="container">
-                
-            </form>
+        <div class="card col p-1 m-1 overflow-auto" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="form_title"></h5>
+                <form id="form_container" class="container overflow-auto">
+
+                </form>
+            </div>
+
         </div>
 
+
     </div>
-
-
-</div>
 </div>
 
 <script src="{{ url_for('static',filename = 'script.js')}}" type="text/javascript"></script>
